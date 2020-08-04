@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" alt="">
+        </a>
+      </div>
+      <div id="espaço">
+        <a href="/home">
+          <div id="voltar">
+            <div id="voltarImag">
+              <img src="{{url_for('static', filename='back.png')}}" alt="">
+            </div>
+            <div id="voltarTexto">
+              <p>Voltar</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="content">
+      <div id="contents3">
+        <a href="/trabalho/datapreparation">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='cloud-computing.png')}}" alt="">
+            </div>
+            <div class="theText1">
+              <h1>Data Preparation</h1>
+            </div>
+          </div>
+        </a>
+        <a href="/trabalho/datagraphics">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='line-chart.png')}}" alt="">
+            </div>
+            <div class="theText1">
+              <h1>Data Graphics</h1>
+            </div>
+          </div>
+        </a>
+        <a href="/trabalho/dataexploration">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='cloud.png')}}" alt="">
+            </div>
+            <div class="theText1">
+              <h1>Data Exploration</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>

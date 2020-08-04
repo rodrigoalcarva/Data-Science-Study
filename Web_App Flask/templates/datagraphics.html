@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+    </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" alt="">
+        </a>
+      </div>
+      <div id="espaço">
+        <a href="/trabalho">
+          <div id="voltar">
+            <div id="voltarImag">
+              <img src="{{url_for('static', filename='back.png')}}" alt="">
+            </div>
+            <div id="voltarTexto">
+              <p>Voltar</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="content">
+        <div id="grandContent">
+          <div id="list">
+            <ul>
+              <li class="itemList1 active" id="adoption" style="background-color: rgba(150,168,189,1);">
+                  <div class="itemList1">
+                      <h2>Adoption Speed</h2>
+                  </div>
+              </li>
+              <li class="itemList1" id="adoptionType">
+                <div class="itemList1">
+                  <h2>AdoptionSpeed with Type</h2>
+                </div>
+              </li>
+              <li class="itemList1" id="adoptionAge">
+                  <div class="itemList1">
+                      <h2>AdoptionSpeed with Age</h2>
+                  </div>
+              </li>
+              <li class="itemList1" id="adoptionBreed"> 
+                <div class="itemList1">
+                    <h2>AdoptionSpeed with Breed</h2>
+                </div>
+              </li>
+              <li class="itemList1" id="adoptionGender">
+                <div class="itemList1">
+                    <h2>AdoptionSpeed with Gender</h2> 
+                </div>
+              </li>
+              <li class="itemList1" id="adoptionHealth">
+                <div class="itemList1">
+                    <h2>AdoptionSpeed with Health</h2>
+                </div>
+              </li>
+              <li class="itemList1" id="adoptionFee">
+                <div class="itemList1">
+                    <h2>AdoptionSpeed with Fee</h2>
+                  </div>
+              </li>
+              <li class="itemList1" id="adoptionState">
+                <div class="itemList1">
+                    <h2>AdoptionSpeed with State</h2>
+                </div>
+              </li>
+              
+          </div>
+          <div id="change" style="display: block;">
+            <div class="col-md-6" style="margin-left: 26%; margin-top: 4%;">
+              <div class="chart" id="bargraph">
+                  <script>
+                      var graphs = {{plot | safe}};
+                      Plotly.plot('bargraph',graphs,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change1"  style="display: none;">
+            <div class="col-md-6" style="margin-left: 15%; margin-top: 4%;">
+              <div class="chart" id="bargraph1">
+                  <script>
+                      var graphs1 = {{plot1 | safe}};
+                      Plotly.plot('bargraph1',graphs1,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change2" style="display: none;">
+            <img src='{{ graph3 }}' alt="Chart" height="42" width="42">
+          </div>
+          <div id="change3" style="display: none;">
+            <div class="col-md-6" style="margin-left: 15%; margin-top: 4%;">
+              <div class="chart" id="bargraph2">
+                  <script>
+                      var graphs2 = {{plot2 | safe}};
+                      Plotly.plot('bargraph2',graphs2,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change4" style="display: none;">
+            <div class="col-md-6" style="margin-left: 15%; margin-top: 4%;">
+              <div class="chart" id="bargraph3">
+                  <script>
+                      var graphs3 = {{plot3 | safe}};
+                      Plotly.plot('bargraph3',graphs3,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change5" style="display: none;">
+            <div class="col-md-6" style="margin-left: 36%; margin-top: 3%;">
+              <div class="chart" id="bargraph4">
+                  <script>
+                      var graphs4 = {{plot4 | safe}};
+                      Plotly.plot('bargraph4',graphs4,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change6" style="display: none;">
+            <div class="col-md-6" style="margin-left: 36%; margin-top: 3%;">
+              <div class="chart" id="bargraph5">
+                  <script>
+                      var graphs5 = {{plot5 | safe}};
+                      Plotly.plot('bargraph5',graphs5,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+          <div id="change7" style="display: none;">
+            <div class="col-md-6" style="margin-left: 36%; margin-top: 3%;">
+              <div class="chart" id="bargraph6">
+                  <script>
+                      var graphs6 = {{plot6 | safe}};
+                      Plotly.plot('bargraph6',graphs6,{});
+                  </script>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script> 
+        $(document).ready(function() { 
+            $('li').click(function() { 
+                console.log($('li.active').attr('id'));
+                $('li.active').css("background-color","");
+                if ($('li.active').attr('id') == "adoption"){
+                  console.log("pau");
+                  $('#change').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionType"){
+                  console.log("pau");
+                  $('#change1').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionAge"){
+                  console.log("pau");
+                  $('#change2').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionBreed"){
+                  console.log("pau");
+                  $('#change3').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionGender"){
+                  $('#change4').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionHealth"){
+                  $('#change5').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionFee"){
+                  $('#change6').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "adoptionState"){
+                  $('#change7').css("display","none");
+                }
+                $('li.active').removeClass("active"); 
+                $(this).addClass("active"); 
+                $(this).css("background-color","rgba(150,168,189,1)");
+                if ($(this).attr('id') == "adoption"){
+                  $('#change').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionType"){
+                  $('#change1').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionAge"){
+                  $('#change2').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionBreed"){
+                  $('#change3').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionGender"){
+                  $('#change4').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionHealth"){
+                  $('#change5').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionFee"){
+                  $('#change6').css("display","block");
+                }
+                else if ($(this).attr('id') == "adoptionState"){
+                  $('#change7').css("display","block");
+                }
+            }); 
+        }); 
+    </script> 
+    
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>

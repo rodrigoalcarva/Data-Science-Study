@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" alt="">
+        </a>
+      </div>
+      <div id="espaço">
+        <a href="/home">
+          <div id="voltar">
+            <div id="voltarImag">
+              <img src="{{url_for('static', filename='back.png')}}" alt="">
+            </div>
+            <div id="voltarTexto">
+              <p>Voltar</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="content">
+      <div id="grandContent">
+        <div id="titleGrand">
+          <h2>Adoção de Cães e Gatos na Malásia</h2>
+        </div>
+        <div id="contentGrand">
+          <p>O DataSet que iremos analisar é o PetFinder_dataset.csv. Para complementar a informação, teremos mais três DataSets: Breed_labels.csv, Colors_labels.csv, States_labels.csv.
+
+              Este DataSet está disponível para fazer o download no Kaggle, e contém dados do PetFinder.my Adoption Prediction.
+              
+              File descriptions:
+              PetFinder_dataset.csv - Dados Tabulares/textuais
+              breed_labels.csv - Contém Type e BreedName para cada BreedID. Type 1 corresponde a um cão e o Type 2 corresponde a um gato.
+              color_labels.csv - Contém a ColorName para cada ColorID.
+              state_labels.csv - Contém o StateName para cada StateID.
+              Target:
+              AdoptionSpeed - Rapidez de Adoção: quanto menor mais rápida foi a adoção.
+              
+              O valor é determinado pela rapidez com que o animal é adotado. Os valores podem ser:
+              
+              0 - O animal foi adotado no dia em que foi registado.
+              1 - O animal foi adotado 1 a 7 dias (1ª Semana) após ser registado.
+              2 - O animal foi adotado 8 a 30 dias (1º Mês) após ser registado.
+              3 - O animal foi adotado 31 a 90 dias (1º e 3º Mês) após ser registado.
+              4 - O animal foi adotado 100 dias após ser registado. (Não há animais, neste dataset, que tenham sido adotados entre os 90 e os 100 dias após o seu registo).
+              Data Fields:
+              PetID - Identificador único de cada animal
+              Type - Tipo de Animal (1 = Cão, 2 = Gato)
+              Name - Nome do Animal (Vazio se não tiver nome)
+              Age - Idade, em meses, de quando o animal foi registado
+              Breed1 - Raça principal do animal (Referente ao dicionário BreedLabels)
+              Breed2 - Raça secundária do animal, caso este seja cruzado (Referente ao dicionário BreedLabels)
+              Gender - Género do Animal (1 = Macho, 2 = Fêmea, 3 = Ninhada)
+              Color1 - Cor 1 do animal (Referent ao dicionário ColorLabels)
+              Color2 - Cor 2 do animal (Referent ao dicionário ColorLabels)
+              Color3 - Cor 3 do animal (Referent ao dicionário ColorLabels)
+              MaturitySize - Tamanho na Maturidade (1 = Pequeno, 2 = Médio, 3 = Grande, 4 = Muito Grande, 0 = Não especificado)
+              FurLength - Tamanho do Pêlo (1 = Pequeno, 2 = Médio, 3 = Longo, 0 = Não especificado)
+              Vaccinated - O animal foi vacinado (1 = Sim, 2 = Não, 3 = Não Sabe)
+              Dewormed - O animal foi desparasitado (1 = Sim, 2 = Não, 3 = Não Sabe)
+              Sterilized - O animal foi castrado (1 = Sim, 2 = Não, 3 = Não Sabe)
+              Health - Condição de Saúde (1 = Saudável, 2 = Pequena Lesão, 3 = Lesão Grave, 0 = Não Especificado)
+              Quantity - Número de animais representados no perfil
+              Fee - Taxa de Adoção (0 = Gratuito)
+              State - Localização do Estado na Malásia (Referente ao dicionário StateLabels)
+              RescuerID - Identificador único de quem resgatou o animal
+              VideoAmt - Total de vídeos do animal
+              PhotoAmt - Total de fotos do animal
+              Description - Descrição do perfil do animal.</p>
+        </div>
+      </div>
+    </div>
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>

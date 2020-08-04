@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+    </script> 
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" alt="">
+        </a>
+      </div>
+      <div id="espaço">
+        <a href="/trabalho">
+          <div id="voltar">
+            <div id="voltarImag">
+              <img src="{{url_for('static', filename='back.png')}}" alt="">
+            </div>
+            <div id="voltarTexto">
+              <p>Voltar</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="content">
+      <div id="grandContent">
+        <div id="list">
+            <ul>
+              <li class="itemList active" id="regression" style="background-color: rgba(150,168,189,1);">
+                  <div class="itemList"  >
+                    <h1>Linear Regression (STM)</h1>
+                  </div>
+              </li>
+              <li class="itemList" id="logisticRegression">
+                  <div class="itemList">
+                      <h1>Logistic Regression</h1>
+                  </div>
+              </li>
+              <li class="itemList" id="linearRegression">
+                  <div class="itemList">
+                      <h1>Linear Regression (RMSE)</h1>
+                  </div>
+              </li>
+              <li class="itemList" id="randomForest">
+                  <div class="itemList">
+                      <h1>Decision Tree</h1> 
+                  </div>
+              </li>
+              <li class="itemList" id="decisionTree">
+                  <div class="itemList">
+                      <h1>Cluster Analysis</h1>
+                  </div>
+              </li>
+            </ul>
+        </div>
+        <div id="change">
+            <img src="{{url_for('static', filename='regression.png')}}" alt="" style="width: 43% !important; height: 95%; margin-left: 29% !important; margin-top: 1% !important;">
+        </div>
+        <div id="change0" style="display: none;">
+          <pre style="margin-left: 25%; margin-top: 13%;">{{log}}</pre>
+        </div>
+        <div id="change1" style="display: none;">
+            <img src='{{ graph4 }}' alt="Chart" height="42" width="42">
+        </div>
+        <div id="change2" style="display: none;">
+            <img src="{{url_for('static', filename='decisionTree.png')}}" alt="Chart" height="42" width="42" style = 'margin-top: 7%;'>
+        </div>
+        <div id="change3" style="display: none;">
+          <div id="tabela">
+            <div id="cluster1">
+              <img src="{{url_for('static', filename='cluster1.png')}}">
+            </div>
+            <div id="cluster2">
+                <img src="{{url_for('static', filename='cluster2.png')}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script> 
+        $(document).ready(function() { 
+            $('li').click(function() { 
+                console.log($('li.active').attr('id'));
+                $('li.active').css("background-color","");
+                if ($('li.active').attr('id') == "regression"){
+                  console.log("pau");
+                  $('#change').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "logisticRegression"){
+                  console.log("pau");
+                  $('#change0').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "linearRegression"){
+                  console.log("pau");
+                  $('#change1').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "randomForest"){
+                  console.log("pau");
+                  $('#change2').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "decisionTree"){
+                  $('#change3').css("display","none");
+                }
+                $('li.active').removeClass("active"); 
+                $(this).addClass("active"); 
+                $(this).css("background-color","rgba(150,168,189,1)");
+                if ($(this).attr('id') == "regression"){
+                  $('#change').css("display","block");
+                }
+                else if ($(this).attr('id') == "logisticRegression"){
+                  $('#change0').css("display","block");
+                }
+                else if ($(this).attr('id') == "linearRegression"){
+                  $('#change1').css("display","block");
+                }
+                else if ($(this).attr('id') == "randomForest"){
+                  $('#change2').css("display","block");
+                }
+                else if ($(this).attr('id') == "decisionTree"){
+                  $('#change3').css("display","block");
+                }
+            });
+        }); 
+    </script>
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>

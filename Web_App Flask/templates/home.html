@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" />
+        </a>
+      </div>
+      <div id="espaço">
+      </div>
+    </div>
+    <div id="content">
+      <div id="contents3">
+        <a href="/trabalho">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='statistics.png')}}" alt="">
+            </div>
+            <div class="theText">
+              <h1>Trabalho</h1>
+            </div>
+          </div>
+        </a>
+        <a href="/tema">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='file.png')}}" alt="">
+            </div>
+            <div class="theText">
+              <h1>Tema</h1>
+            </div>
+          </div>
+        </a>
+        <a href="/grupo">
+          <div class="oneButton">
+            <div class="theImage">
+              <img src="{{url_for('static', filename='user.png')}}" alt="">
+            </div>
+            <div class="theText">
+              <h1>O Grupo</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>

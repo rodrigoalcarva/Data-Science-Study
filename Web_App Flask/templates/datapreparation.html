@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PCD - Grupo 3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+    </script> 
+  </head>
+  <body>
+    <div id="header">
+      <div id="divLogo">
+        <a href="/">
+          <img src="{{url_for('static', filename='Logotipo_ISEG.png')}}" alt="">
+        </a>
+      </div>
+      <div id="espaço">
+        <a href="/trabalho">
+          <div id="voltar">
+            <div id="voltarImag">
+              <img src="{{url_for('static', filename='back.png')}}" alt="">
+            </div>
+            <div id="voltarTexto">
+              <p>Voltar</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="content">
+        <div id="grandContent">
+            <div id="list">
+              <ul>
+                <li class="itemList active" id="data" style="background-color: rgba(150,168,189,1);">
+                    <div class="itemList"  >
+                      <h1>Data</h1>
+                    </div>
+                </li>
+                <li class="itemList" id="missingValues">
+                    <div class="itemList">
+                        <h1>Missing Values</h1>
+                    </div>
+                </li>
+                <li class="itemList" id="dataBalancing">
+                    <div class="itemList">
+                        <h1>Data Balancing</h1>
+                    </div>
+                </li>
+                <li class="itemList" id="variancia">
+                    <div class="itemList">
+                        <h1>Variância</h1> 
+                    </div>
+                </li>
+                <li class="itemList" id="correlacao">
+                    <div class="itemList">
+                        <h1>Correlation</h1>
+                    </div>
+                </li>
+              </ul>
+            </div>
+            <div id="change" style="display: block;">
+                {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+                {% endfor %}
+            </div>
+            <div id="change0" style="display: none;">
+                <img src='{{ graph1 }}' alt="Chart" height="42" width="42">
+                <h2>df['Name'] = df['Name'].fillna('Unknown')</h2>
+            </div>
+            <div id="change1" style="display: none;">
+                <h3>------------------------------------------TYPE------------------------------------------</h3>
+                <p>{{TypeCount}}</p>
+                <p>{{TypePerc}}</p>
+                <h3>------------------------------------------AGE------------------------------------------</h3>
+                <p>{{AgeCount}}</p>
+                <p>{{AgePerc}}</p>
+                <h3>------------------------------------------BREED1----------------------------------------</h3>
+                <p>{{Breed1Count}}</p>
+                <p>{{Breed1Perc}}</p>
+                <h3>------------------------------------------BREED2---------------------------------------</h3>
+                <p>{{Breed2Count}}</p>
+                <p>{{Breed2Perc}}</p>
+                <h3>------------------------------------------GENDER---------------------------------------</h3>
+                <p>{{GenderCount}}</p>
+                <p>{{GenderPerc}}</p>
+                <h3>---------------------------------------MATURITY---------------------------------------</h3>
+                <p>{{MaturityCount}}</p>
+                <p>{{MaturityPerc}}</p>
+                <h3>---------------------------------------FURLENGTH--------------------------------------</h3>
+                <p>{{FurLengthCount}}</p>
+                <p>{{FurLengthPerc}}</p>
+                <h3>--------------------------------------VACCINATED-------------------------------------</h3>
+                <p>{{VaccinatedCount}}</p>
+                <p>{{VaccinatedPerc}}</p>
+                <h3>--------------------------------------DEWORMED--------------------------------------</h3>
+                <p>{{DewormedCount}}</p>
+                <p>{{DewormedPerc}}</p>
+                <h3>--------------------------------------STERILIZED---------------------------------------</h3>
+                <p>{{SterilizedCount}}</p>
+                <p>{{SterilizedPerc}}</p>
+                <h3>-----------------------------------------HEALTH----------------------------------------</h3>
+                <p>{{HealthCount}}</p>
+                <p>{{HealthPerc}}</p>
+                <h3>------------------------------------------STATE-----------------------------------------</h3>
+                <p>{{StateCount}}</p>
+                <p>{{StatePerc}}</p>
+                <h3>-----------------------------------ADOPTIONSPEED-----------------------------------</h3>
+                <p>{{AdoptionSpeedCount}}</p>
+                <p>{{AdoptionSpeedPerc}}</p>
+            </div>
+                
+            <div id="change3" style="display: none;">
+                <h5>{{textAge}}</h5>
+                <h5>{{textBreed1}}</h5>
+                <h5>{{textBreed2}}</h5>
+                <h5>{{textGender}}</h5>
+                <h5>{{textColor1}}</h5>
+                <h5>{{textColor2}}</ph5>
+                <h5p>{{textColor3}}</h5>
+                <h5>{{textMaturity}}</h5>
+                <h5>{{textFurLength}}</h5>
+                <h5>{{textVaccinated}}</h5>
+                <h5>{{textDewormed}}</h5>
+                <h5>{{textSterilized}}</h5>
+                <h5>{{textHealth}}</h5>
+                <h5>{{textQuantity}}</h5>
+                <h5>{{textFee}}</h5>
+                <h5>{{textState}}</h5>
+                <h5>{{textVideoAmt}}</h5>
+                <h5>{{textPhotoAmt}}</h5>
+                <h5>{{textAdoptionSpeed}}</h5>
+            </div>
+            <div id="change4" style="display: none;">
+                <img src='{{ graph2 }}' alt="Chart" height="42" width="42">
+            </div>
+        </div>
+    </div>
+    <script> 
+        $(document).ready(function() { 
+            $('li').click(function() { 
+                console.log($('li.active').attr('id'));
+                $('li.active').css("background-color","");
+                if ($('li.active').attr('id') == "data"){
+                  console.log("pau");
+                  $('#change').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "missingValues"){
+                  console.log("pau");
+                  $('#change0').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "dataBalancing"){
+                  console.log("pau");
+                  $('#change1').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "variancia"){
+                  console.log("pau");
+                  $('#change3').css("display","none");
+                }
+                else if ($('li.active').attr('id') == "correlacao"){
+                  $('#change4').css("display","none");
+                }
+                $('li.active').removeClass("active"); 
+                $(this).addClass("active"); 
+                $(this).css("background-color","rgba(150,168,189,1)");
+                if ($(this).attr('id') == "data"){
+                  $('#change').css("display","block");
+                }
+                else if ($(this).attr('id') == "missingValues"){
+                  $('#change0').css("display","block");
+                }
+                else if ($(this).attr('id') == "dataBalancing"){
+                  $('#change1').css("display","block");
+                }
+                else if ($(this).attr('id') == "variancia"){
+                  $('#change3').css("display","block");
+                }
+                else if ($(this).attr('id') == "correlacao"){
+                  $('#change4').css("display","block");
+                }
+            });
+            console.log( (window.document.getElementById( 'change' ) ).innerHTML)
+            var str = (window.document.getElementById( 'change' ) ).innerHTML
+            //var str = $('#change').text().replace(/Name/g, '');
+            //$('#change').text(str); 
+        }); 
+    </script> 
+    <footer>&copy; Copyright 2019 || Grupo ? - Ana Leonor Escabelado | José Queirós | Rodrigo Alcarva | Tomás Aveiro</footer>
+  </body>
+</html>
